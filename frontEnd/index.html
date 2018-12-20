@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>App - Veterinarios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Icons -->
+    <link href="lib/fontawesome/css/fontawesome.min.css" rel="stylesheet"> <!--load all styles -->
+    <link href="lib/fontawesome/css/solid.min.css" rel="stylesheet"> <!--load all styles -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="lib/bootstrap4/css/bootstrap.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header class="text-center">
+      <div class="container">
+          <h1>Lista de Veterinarios</h1>
+          <div id="form" class="text-center my-4"></div>
+      </div>
+    </header>
+    <div class="container">
+      <!-- App --> 
+      <div class="col-lg-8 mx-auto">
+        <div id="app"></div>
+      </div>
+    </div>
+    <div id="preloader">
+        <div class="inner">
+           <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
+           <div class="bolas">
+              <div></div>
+              <div></div>
+              <div></div>                    
+           </div>
+        </div>
+    </div>
+    <div id="error" class="col-8 mx-auto"></div>
+    <div id="navegate" class="col-12 fixed-bottom"></div>    
+    <!-- Dependências --> 
+    <script src="lib/mustache.min.js"></script>
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/backbone-min.js"></script>
+    <!-- Models --> 
+    <script src="js/models/veterinary.model.js"></script>
+    <!-- Collection --> 
+    <script src="js/collection/veterinarians.collection.js"></script>
+    <!-- View --> 
+    <script src="js/view/search.view.js"></script>
+    <script src="js/view/description.view.js"></script>
+    <script src="js/view/listVeterinary.js"></script>
+    <script src="js/view/navegate.view.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/routers.js"></script>   
+    <script>
+        $(window).on('load', function () {
+            $('#preloader .inner').fadeOut();
+            $('#preloader').delay(350).fadeOut('slow'); 
+            $('body').delay(350).css({'overflow': 'visible'});
+        })
+      </script> 
+  </body>
+</html>
